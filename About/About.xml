@@ -1,0 +1,12 @@
+<ModMetaData>
+	<name>Bulk Stonecutting</name>
+	<author>Fuglypump</author>
+	<targetVersion>0.18.1722</targetVersion>
+	<description>Adds new bills to the Stonecutter's table which cuts 3 chunks at a time. *No research required*
+
+Notes:
+- Load this mod **AFTER** the mod called "Cupro's Stones" if you have it.
+- Cutting 3 chunks at once creates 60 blocks and costs 15% less work than cutting single chunks at a time.
+- Should be safe to add and remove to your saved games, just make sure you delete the bulk bills before uninstalling.
+		</description>
+</ModMetaData>

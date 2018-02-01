@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<!-- Skilled Stonecutting -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Skilled Stonecutting</modName>
+				<yourMod>Bulk Stonecutting</yourMod>
+				<customMessageSuccess>Bulk Stonecutting: Mod named "Skilled Stonecutting" detected, updating bulk recipes.</customMessageSuccess>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBase"]</xpath>
+				<value>
+					<workSpeedStat>StonecuttingSpeed</workSpeedStat>
+					<workSkill>Crafting</workSkill>
+					<workSkillLearnFactor>0.25</workSkillLearnFactor>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+
+<!-- Cupro's Stones -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.loadOrder">
+				<modName>Cupro's Stones</modName>
+				<yourMod>Bulk Stonecutting</yourMod>
+				<yourModFirst>false</yourModFirst>
+				<errorOnFail>true</errorOnFail>
+				<customMessageFail>Bulk Stonecutting: Mod named "Cupro's Stones" detected and was loaded after "Bulk Stonecutting", Cupro's Stones should be loaded *BEFORE* Bulk Stonecutting.</customMessageFail>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Cupro's Stones</modName>
+				<yourMod>Bulk Stonecutting</yourMod>
+				<customMessageSuccess>Bulk Stonecutting: Mod named "Cupro's Stones" detected, adding recipes for stone new types.</customMessageSuccess>
+			</li>									
+<!-- Claystone -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkClaystone"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkClaystone</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkClaystone"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkClaystone</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkClaystone"]/products</xpath>
+				<value>
+					<BlocksClaystone>60</BlocksClaystone>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkClaystone"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Andesite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkAndesite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkAndesite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkAndesite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkAndesite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkAndesite"]/products</xpath>
+				<value>
+					<BlocksAndesite>60</BlocksAndesite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkAndesite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Syenite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSyenite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkSyenite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSyenite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkSyenite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSyenite"]/products</xpath>
+				<value>
+					<BlocksSyenite>60</BlocksSyenite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSyenite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Gneiss -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkGneiss</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkGneiss</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/products</xpath>
+				<value>
+					<BlocksGneiss>60</BlocksGneiss>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Quartzite -->				
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkQuartzite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkQuartzite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/products</xpath>
+				<value>
+					<BlocksQuartzite>60</BlocksQuartzite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Schist -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkSchist</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkSchist</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/products</xpath>
+				<value>
+					<BlocksSchist>60</BlocksSchist>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Gabbro -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkGabbro</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkGabbro</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/products</xpath>
+				<value>
+					<BlocksGabbro>60</BlocksGabbro>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Diorite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDiorite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkDiorite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDiorite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkDiorite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDiorite"]/products</xpath>
+				<value>
+					<BlocksDiorite>60</BlocksDiorite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDiorite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>			
+<!-- Dunite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDunite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkDunite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDunite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkDunite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDunite"]/products</xpath>
+				<value>
+					<BlocksDunite>60</BlocksDunite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDunite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>					
+<!-- Pegmatite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkPegmatite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkPegmatite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkPegmatite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkPegmatite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkPegmatite"]/products</xpath>
+				<value>
+					<BlocksPegmatite>60</BlocksPegmatite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkPegmatite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>	
+		</operations>
+	</Operation>	
+	
+<!-- More Stone -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.loadOrder">
+				<modName>More Stone</modName>
+				<yourMod>Bulk Stonecutting</yourMod>
+				<yourModFirst>false</yourModFirst>
+				<errorOnFail>true</errorOnFail>
+				<customMessageFail>Bulk Stonecutting: Mod named "More Stone" detected and was loaded after "Bulk Stonecutting", More Stone should be loaded *BEFORE* Bulk Stonecutting.</customMessageFail>
+			</li>
+		</operations>
+	</Operation>
+		
+		<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>More Stone</modName>
+				<yourMod>Bulk Stonecutting</yourMod>
+				<customMessageSuccess>Bulk Stonecutting: Mod named "More Stone" detected, adding recipes for stone new types.</customMessageSuccess>
+			</li>	
+<!-- Chalk -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkChalk"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkChalk</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkChalk"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkChalk</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkChalk"]/products</xpath>
+				<value>
+					<BlocksChalk>60</BlocksChalk>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkChalk"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Dolomite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDolomite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkDolomite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDolomite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkDolomite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDolomite"]/products</xpath>
+				<value>
+					<BlocksDolomite>60</BlocksDolomite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDolomite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Shale -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkShale"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkShale</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkShale"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkShale</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkShale"]/products</xpath>
+				<value>
+					<BlocksShale>60</BlocksShale>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkShale"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Kaolinite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkKaolinite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkKaolinite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkKaolinite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkKaolinite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkKaolinite"]/products</xpath>
+				<value>
+					<BlocksKaolinite>60</BlocksKaolinite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkKaolinite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Basalt -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkBasalt"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkBasalt</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkBasalt"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkBasalt</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkBasalt"]/products</xpath>
+				<value>
+					<BlocksBasalt>60</BlocksBasalt>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkBasalt"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>				
+<!-- Gabbro -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkGabbro</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkGabbro</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/products</xpath>
+				<value>
+					<BlocksGabbro>60</BlocksGabbro>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGabbro"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Dacite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDacite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkDacite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDacite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkDacite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDacite"]/products</xpath>
+				<value>
+					<BlocksDacite>60</BlocksDacite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkDacite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Rhyolite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkRhyolite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkRhyolite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkRhyolite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkRhyolite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkRhyolite"]/products</xpath>
+				<value>
+					<BlocksRhyolite>60</BlocksRhyolite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkRhyolite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Microcline -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkMicrocline"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkMicrocline</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkMicrocline"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkMicrocline</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkMicrocline"]/products</xpath>
+				<value>
+					<BlocksMicrocline>60</BlocksMicrocline>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkMicrocline"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Quartzite -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkQuartzite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkQuartzite</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/products</xpath>
+				<value>
+					<BlocksQuartzite>60</BlocksQuartzite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkQuartzite"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Gneiss -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkGneiss</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkGneiss</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/products</xpath>
+				<value>
+					<BlocksGneiss>60</BlocksGneiss>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkGneiss"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>		
+<!-- Schist -->			
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/ingredients/li/filter/thingDefs</xpath>
+				<value>
+					<li>ChunkSchist</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/fixedIngredientFilter/thingDefs</xpath>
+				<value>
+					<li>ChunkSchist</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/products</xpath>
+				<value>
+					<BlocksSchist>60</BlocksSchist>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkSchist"]/recipeUsers</xpath>
+				<value>
+					<li>TableStonecutter</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
