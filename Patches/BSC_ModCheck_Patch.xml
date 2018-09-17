@@ -12,11 +12,16 @@
 				<customMessageSuccess>Bulk Stonecutting: Mod named "Skilled Stonecutting" detected, updating bulk recipes.</customMessageSuccess>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBase"]</xpath>
+				<xpath>*/RecipeDef[defName = "MakeStoneBlocksBulkBase"]</xpath>
 				<value>
-					<workSpeedStat>StonecuttingSpeed</workSpeedStat>
 					<workSkill>Crafting</workSkill>
 					<workSkillLearnFactor>0.25</workSkillLearnFactor>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/Defs/RecipeDef[@Name = "MakeStoneBlocksBulkBase"]/workSpeedStat</xpath>
+				<value>
+					<workSpeedStat>StonecuttingSpeed</workSpeedStat>
 				</value>
 			</li>
 		</operations>
